@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bitcoin-orange: #f7931a;
+  --bitcoin-dark: #0f0f0f;
+  --bitcoin-surface: #161616;
+  --bitcoin-border: #2a2a2a;
+}
+
+body {
+  @apply bg-bitcoin-dark text-gray-100 antialiased font-body;
+}
+
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* 16px minimum on inputs to prevent iOS zoom on focus */
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* Subtle gradient background with noise feel */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(247, 147, 26, 0.06), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(247, 147, 26, 0.03), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
